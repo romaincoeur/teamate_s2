@@ -1,0 +1,4 @@
+userTool:
+    pattern:  /userTool
+    defaults: { _controller: TeamateUserBundle:Security:index }
+

@@ -1,0 +1,31 @@
+
+{# src/Teamate/PagesBundle/Resources/views/Welcome/index.html.twig #}
+
+{% extends "::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Accueil{% endblock %}
+
+{% block body %}
+    <h2>Page d'accueil</h2>
+    <p>
+        <br>Tu veux jouer ? T'as qu'à cliquer !
+        <br>
+        <br>Avec vos amis ou collègue de bureau,
+        <br>défier les joueurs de votre entourage !
+        <br>
+    </p>
+
+    {# On affiche les messages flash que définissent les contrôleurs du bundle #}
+    {% for key, message in app.session.flashbag.all() %}
+        <div class="alert alert-{{ key }}">
+            {{ message|trans({}, 'FOSUserBundle') }}
+        </div>
+    {% endfor %}
+
+    {# On définit ce block, dans lequel vont venir s'insérer les autres vues du bundle #}
+    {% block fos_user_content %}
+    {% endblock fos_user_content %}
+
+    {{ render(controller("TeamateMatchBundle:Default:searchMatchtool")) }}
+
+{% endblock %}

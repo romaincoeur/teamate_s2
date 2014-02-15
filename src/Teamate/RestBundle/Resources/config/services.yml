@@ -1,0 +1,7 @@
+parameters:
+#    teamate_rest.example.class: Teamate\RestBundle\Example
+
+services:
+#    teamate_rest.example:
+#        class: %teamate_rest.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

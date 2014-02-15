@@ -1,0 +1,3 @@
+teamate_match_homepage:
+    pattern:  /Matches
+    defaults: { _controller: TeamateMatchBundle:Default:index }
