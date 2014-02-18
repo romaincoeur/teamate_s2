@@ -8,6 +8,6 @@ class TeamateUserBundle extends Bundle
 {
     public function getParent()
     {
-        return 'FOSUserBundle';
+        //return 'FOSUserBundle';
     }
 }

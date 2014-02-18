@@ -1,16 +1,16 @@
 <?php
-# src/Teamate/RestBundle/Controller/UserController.php
+# src/Teamate/UserBundle/Controller/UserController.php
 
-namespace Teamate\RestBundle\Controller;
+namespace Teamate\UserBundle\Controller;
 
 use FOS\RestBundle\Controller\FOSRestController;
 use FOS\RestBundle\Controller\Annotations as Rest;
 use FOS\RestBundle\Routing\ClassResourceInterface;
 use FOS\RestBundle\Util\Codes;
 use Symfony\Component\HttpFoundation\Request;
-use Teamate\RestBundle\Entity\Organisation;
-use Teamate\RestBundle\Entity\User;
-use Teamate\RestBundle\Form\UserType;
+use Teamate\MatchBundle\Entity\Game;
+use Teamate\UserBundle\Entity\User;
+use Teamate\UserBundle\Form\UserType;
 
 class UserController extends FOSRestController implements ClassResourceInterface
 {

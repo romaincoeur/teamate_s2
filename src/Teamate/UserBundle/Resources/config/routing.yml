@@ -2,3 +2,6 @@ userTool:
     pattern:  /userTool
     defaults: { _controller: TeamateUserBundle:Security:index }
 
+user:
+    type: rest
+    resource: Teamate\UserBundle\Controller\UserController

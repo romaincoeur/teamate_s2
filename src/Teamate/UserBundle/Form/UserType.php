@@ -1,6 +1,6 @@
 <?php
 
-namespace Teamate\RestBundle\Form;
+namespace Teamate\UserBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -15,8 +15,24 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
-            ->add('game')
+            ->add('username')
+            ->add('usernameCanonical')
+            ->add('email')
+            ->add('emailCanonical')
+            ->add('enabled')
+            ->add('salt')
+            ->add('password')
+            ->add('lastLogin')
+            ->add('locked')
+            ->add('expired')
+            ->add('expiresAt')
+            ->add('confirmationToken')
+            ->add('passwordRequestedAt')
+            ->add('roles')
+            ->add('credentialsExpired')
+            ->add('credentialsExpireAt')
+            ->add('avatar')
+            ->add('favoritePlayers')
         ;
     }
     
@@ -35,6 +51,6 @@ class UserType extends AbstractType
      */
     public function getName()
     {
-        return 'teamate_restbundle_user';
+        return 'teamate_userbundle_user';
     }
 }

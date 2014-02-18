@@ -1,3 +1,7 @@
 teamate_match_homepage:
     pattern:  /Matches
     defaults: { _controller: TeamateMatchBundle:Default:index }
+
+game:
+    type: rest
+    resource: Teamate\MatchBundle\Controller\GameController

@@ -21,7 +21,7 @@ class AppKernel extends Kernel
             new Teamate\UserBundle\TeamateUserBundle(),
             new Teamate\MatchBundle\TeamateMatchBundle(),
             new Teamate\GymBundle\TeamateGymBundle(),
-            new Teamate\RestBundle\TeamateRestBundle(),
+
 
             new FOS\UserBundle\FOSUserBundle(),
 
@@ -31,6 +31,17 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle($this),
             new FOS\RestBundle\FOSRestBundle(),
+
+            # SONATA ADMIN
+            new Sonata\CoreBundle\SonataCoreBundle(),
+            new Sonata\jQueryBundle\SonatajQueryBundle(),
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
+            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

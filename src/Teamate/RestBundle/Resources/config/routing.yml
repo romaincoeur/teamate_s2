@@ -1,8 +1,0 @@
-
-game:
-    type: rest
-    resource: Teamate\RestBundle\Controller\GameController
-
-user:
-    type: rest
-    resource: Teamate\RestBundle\Controller\UserController
