@@ -2,14 +2,14 @@
 
 namespace Teamate\UserBundle\Entity;
 
-use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Sonata\UserBundle\Entity\BaseUser as BaseUser;
 
 /**
  * User
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="Teamate\UserBundle\Entity\UserRepository")
+ * @ORM\Entity()
  */
 class User extends BaseUser
 {

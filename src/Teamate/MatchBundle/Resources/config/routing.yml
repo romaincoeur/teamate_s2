@@ -5,3 +5,7 @@ teamate_match_homepage:
 game:
     type: rest
     resource: Teamate\MatchBundle\Controller\GameController
+
+teamate_match_create:
+    pattern:  /creer_mon_match
+    defaults: { _controller: TeamateMatchBundle:Default:create }

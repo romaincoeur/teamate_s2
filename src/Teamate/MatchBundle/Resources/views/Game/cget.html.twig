@@ -5,24 +5,24 @@
 
         <h3> Les Matchs aujourd'hui </h3>
 
-        {% for match in listeMatches %}
-            <a href="match/{{ match.id }}">
+        {% for entity in entities %}
+            <a href="match/{{ entity.id }}">
                 <article id='match1'>
                     <figure>
 
                         <div id='trouver_marche_description'>
-                            <h4>{{ match.format }} - {{ match.pitch.type }}</h4>
+                            <h4>{{ entity.format }} - {{ entity.pitch.type }}</h4>
                             <p>
-                                {{ match.pitch.sportcenter.name }}
-                                <br>Le {{ match.beginDate|date("d/m/Y") }}
+                                {{ entity.pitch.center.name }}
+                                <br>Le {{ entity.startdate }}
                                 <br/>
-                                <br/>Inscriptions avant le {{ match.limitDate|date("d/m/Y") }}
+                                <br/>Inscriptions avant le {{ entity.limitdate }}
                             </p>
                         </div>
 
                         <div id='trouver_places'>
                             <p id='casse_les_couilles'>
-                                <span>{{ match.priceperplayer }}</span>
+                                <span>{{ entity.priceperplayer }}</span>
                                 <br/>par joueur
                             </p>
                         </div>

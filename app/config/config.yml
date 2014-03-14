@@ -57,7 +57,7 @@ doctrine:
         # path:     "%database_path%"
 
         types:
-                    json: Sonata\Doctrine\Types\JsonType
+            json: Sonata\Doctrine\Types\JsonType
 
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
@@ -76,10 +76,19 @@ swiftmailer:
 fos_user:
     db_driver:     orm                        # Le type de BDD à utiliser, nous utilisons l'ORM Doctrine depuis le début
     firewall_name: main                       # Le nom du firewall derrière lequel on utilisera ces utilisateurs
-    user_class:    Application\Sonata\UserBundle\Entity\User
+    user_class:    Teamate\UserBundle\Entity\User
 
     group:
-          group_class: Application\Sonata\UserBundle\Entity\Group
+          group_class: Teamate\UserBundle\Entity\Group
+
+    profile:
+          # Authentication Form
+          form:
+              type:               fos_user_profile
+              handler:            fos_user.profile.form.handler.default
+              name:               fos_user_profile_form
+              validation_groups:  [Authentication] # Please note : this is not the default value
+
 
 
 # FOS REST BUNDLE
@@ -116,7 +125,7 @@ sonata_block:
 
 sonata_admin:
     title:      Admin Panel
-    title_logo: /bundles/sonataadmin/logo_title.png
+    title_logo: bundles/sonataadmin/logo_title.png
     templates:
         # default global templates
         layout:  SonataAdminBundle::standard_layout.html.twig

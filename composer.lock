@@ -2342,12 +2342,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataCoreBundle.git",
-                "reference": "863809982c98b8444aeab1ff442c117d74f1a7c7"
+                "reference": "db2b29c4e973d2b4540e52da9a33c3e62fd77146"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataCoreBundle/zipball/863809982c98b8444aeab1ff442c117d74f1a7c7",
-                "reference": "863809982c98b8444aeab1ff442c117d74f1a7c7",
+                "url": "https://api.github.com/repos/sonata-project/SonataCoreBundle/zipball/db2b29c4e973d2b4540e52da9a33c3e62fd77146",
+                "reference": "db2b29c4e973d2b4540e52da9a33c3e62fd77146",
                 "shasum": ""
             },
             "require": {
@@ -2393,7 +2393,7 @@
             "keywords": [
                 "sonata"
             ],
-            "time": "2014-02-14 14:24:51"
+            "time": "2014-02-18 18:09:28"
         },
         {
             "name": "sonata-project/doctrine-extensions",

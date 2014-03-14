@@ -6,26 +6,46 @@
 {% block title %}{{ parent() }} - Accueil{% endblock %}
 
 {% block body %}
-    <h2>Page d'accueil</h2>
-    <p>
-        <br>Tu veux jouer ? T'as qu'à cliquer !
-        <br>
-        <br>Avec vos amis ou collègue de bureau,
-        <br>défier les joueurs de votre entourage !
-        <br>
-    </p>
 
-    {# On affiche les messages flash que définissent les contrôleurs du bundle #}
-    {% for key, message in app.session.flashbag.all() %}
-        <div class="alert alert-{{ key }}">
-            {{ message|trans({}, 'FOSUserBundle') }}
+
+    <!-- bandeau d'entete-->
+    <div id="banniere_rechercher">
+
+        <div id="banniere_rechercher_gauche">
+
+            <img src="{{ asset('img/loupe.png') }}" alt="Loupe pour trouver un match"/>
+
+            <h2> Trouver un match près de chez vous </h2>
+
+            <form id="search_match" name="search_match" method="post">
+                <input type="hidden" name="action" value="search_match">
+                <p>
+                    <input type="search" placeholder="Dans quelle ville voulez-vous jouer ?" id="search"/>
+                    <input type="submit" value="Rechercher" id="submit"/>
+                </p>
+
+            </form>
+
         </div>
-    {% endfor %}
 
-    {# On définit ce block, dans lequel vont venir s'insérer les autres vues du bundle #}
-    {% block fos_user_content %}
-    {% endblock fos_user_content %}
+        <img src="{{ asset('img/ou.png') }}" alt="Ou" id="ou"/>
+
+        <div id="banniere_rechercher_droite">
+
+            <img src="{{ asset('img/Plus.png') }}" alt="Logo organiser votre match" />
+
+            <h2> Organiser votre match </h2>
+
+            <a class="btn btn-primary" href="{{ path('teamate_match_create') }}" style="margin: auto;display: block;width: inherit;">Organiser</a>
+
+        </div>
+
+
+    </div>
+    <!--fin du bandeau d'entete-->
 
     {{ render(controller("TeamateMatchBundle:Default:searchMatchtool")) }}
+
+
 
 {% endblock %}

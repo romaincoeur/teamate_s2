@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
+
     public function searchMatchToolAction(Request $request)
     {
         $repository = $this->getDoctrine()
@@ -28,5 +29,10 @@ class DefaultController extends Controller
         {
             return $this->render('TeamateMatchBundle:Default:searchMatchTool.html.twig', array('listeMatches' => $listeMatches));
         }
+    }
+
+    public function createAction()
+    {
+        return $this->render('TeamateMatchBundle:Default:create.html.twig');
     }
 }
