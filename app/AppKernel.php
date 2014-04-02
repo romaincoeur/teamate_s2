@@ -16,34 +16,10 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
-
-            new Teamate\PagesBundle\TeamatePagesBundle(),
-            new Teamate\UserBundle\TeamateUserBundle(),
-            new Teamate\MatchBundle\TeamateMatchBundle(),
-            new Teamate\GymBundle\TeamateGymBundle(),
-
-
-            new FOS\UserBundle\FOSUserBundle(),
-
-            # FOS REST BUNDLE
-            new JMS\AopBundle\JMSAopBundle(),
-            new JMS\DiExtraBundle\JMSDiExtraBundle($this),
-            new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
-            new JMS\SerializerBundle\JMSSerializerBundle($this),
-            new FOS\RestBundle\FOSRestBundle(),
-
-            # SONATA ADMIN
-            new Sonata\CoreBundle\SonataCoreBundle(),
-            new Sonata\jQueryBundle\SonatajQueryBundle(),
-            new Sonata\AdminBundle\SonataAdminBundle(),
-            new Sonata\BlockBundle\SonataBlockBundle(),
-            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
-            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-            new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
-            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
+            $bundles[] = new Acme\DemoBundle\AcmeDemoBundle();
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();

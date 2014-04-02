@@ -1,7 +1,0 @@
-parameters:
-#    teamate_match.example.class: Teamate\MatchBundle\Example
-
-services:
-#    teamate_match.example:
-#        class: %teamate_match.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,7 +1,0 @@
-parameters:
-#    teamate_pages.example.class: Teamate\PagesBundle\Example
-
-services:
-#    teamate_pages.example:
-#        class: %teamate_pages.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]

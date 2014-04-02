@@ -1,3 +1,0 @@
-teamate_gym_homepage:
-    pattern:  /hello/{name}
-    defaults: { _controller: TeamateGymBundle:Default:index }
