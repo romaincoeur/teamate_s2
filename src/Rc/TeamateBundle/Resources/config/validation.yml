@@ -1,0 +1,22 @@
+# src/Rc/TeamateBundle/Resources/config/validation.yml
+
+Rc\TeamateBundle\Entity\Game:
+    properties:
+        reservationMode:
+            - NotBlank: ~
+            - Choice: { callback: getReservationModeValues }
+        level:
+            - NotBlank: ~
+            - Choice: { callback: getLevelValues }
+        format:
+            - NotBlank: ~
+            - Choice: { callback: getFormatValues }
+        pitchType:
+            - NotBlank: ~
+            - Choice: { callback: getPitchTypeValues }
+
+
+Rc\TeamateBundle\Entity\Terrain:
+    properties:
+        email:
+            - Email: ~

@@ -1,0 +1,104 @@
+# src/Rc/TeamateBundle/Resources/config/doctrine/terrain.orm.yml
+Rc\TeamateBundle\Entity\Terrain:
+  type: entity
+  repositoryClass: Rc\TeamateBundle\Repository\TerrainRepository
+  table: terrain
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    name:
+      type: string
+      length: 255
+      nullable: true
+    city:
+      type: string
+      length: 255
+      nullable: true
+    postcode:
+      type: string
+      length: 255
+      nullable: true
+    comment:
+      type: string
+      length: 255
+      nullable: true
+    region:
+      type: string
+      length: 255
+      nullable: true
+    country:
+      type: string
+      length: 255
+      nullable: true
+    email:
+      type: string
+      length: 255
+      nullable: true
+    managerName:
+      type: string
+      length: 255
+      nullable: true
+    website:
+      type: string
+      length: 255
+      nullable: true
+    phone:
+      type: string
+      length: 255
+      nullable: true
+    is_activated:
+      type: boolean
+      nullable: true
+    created_at:
+      type: datetime
+    updated_at:
+      type: datetime
+      nullable: true
+    address:
+      type: string
+      length: 255
+      nullable: true
+    latitude:
+      type: decimal
+      length: 10
+      scale: 8
+      nullable: true
+    longitude:
+      type: decimal
+      length: 10
+      scale: 8
+      nullable: true
+    priceScale:
+      type: string
+      length: 255
+      nullable: true
+    casiers:
+      type: boolean
+      nullable: true
+    showers:
+      type: boolean
+      nullable: true
+    parking:
+      type: boolean
+      nullable: true
+    restaurant:
+      type: boolean
+      nullable: true
+    bar:
+      type: boolean
+      nullable: true
+    vestiaires:
+      type: boolean
+      nullable: true
+    nbPitches:
+      type: integer
+      nullable: true
+  oneToMany:
+    games:
+      targetEntity: Game
+      mappedBy: terrain
+  lifecycleCallbacks:
+    prePersist: [ setCreatedAtValue ]
+    preUpdate: [ setUpdatedAtValue ]

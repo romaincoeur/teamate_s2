@@ -1,0 +1,100 @@
+{# src/Rc/TeamateBundle/Resources/views/Game/parametre.html.twig #}
+
+{% extends "RcTeamateBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Paramétrer mon match{% endblock %}
+
+{% block body %}
+
+
+    <div class="breadcrumb" style="margin-bottom: 0">
+        <div class="center-block" style="width: 700px;">
+            <div class="row">
+                <p>1.je crée mon match</p>
+                <p>2.je parametre</p>
+                <p>3.j'invite des joueurs</p>
+            </div>
+            <img class="center-block" src="{{ asset('bundles/rcteamate/images/breadcrumb2.png') }}" alt="breadcrumb">
+        </div>
+    </div>
+
+    <div class="banner-create">
+        Les joueurs payent en ligne et Tea<span>m</span>ate vous reverse l'argent.
+        <div class="row wrap">
+            <div class="col-md-4">
+                <img src="{{ asset('bundles/rcteamate/images/lapin.png') }}" alt="lapin">
+                <div class="label">fini les lapins</div>
+            </div>
+            <div class="col-md-4">
+                <img src="{{ asset('bundles/rcteamate/images/annule.png') }}" alt="lapin">
+                <div class="label">fini les décommandes</div>
+            </div>
+            <div class="col-md-4">
+                <img src="{{ asset('bundles/rcteamate/images/telephone.png') }}" alt="lapin">
+                <div class="label">fini les appels inutiles</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap">
+        <form action="{{ path('game_parametre') }}" method="post" {{ form_enctype(form) }}>
+
+            {# Les erreurs générales du formulaire. #}
+            {{ form_errors(form) }}
+
+            <div class="row">
+                <div class="col-md-12">
+                    {# Génération du label. #}
+                    {{ form_label(form.totalPlaces, "Nombre de joueurs maximum") }}
+
+                    {# Affichage des erreurs pour ce champ précis. #}
+                    {{ form_errors(form.totalPlaces) }}
+
+                    {# Génération de l'input. #}
+                    {{ form_widget(form.totalPlaces) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {# Génération du label. #}
+                    {{ form_label(form.pricePerPlayer, "Participation demandée par joueur") }}
+
+                    {# Affichage des erreurs pour ce champ précis. #}
+                    {{ form_errors(form.pricePerPlayer) }}
+
+                    {# Génération de l'input. #}
+                    {{ form_widget(form.pricePerPlayer) }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {# Génération du label. #}
+                    {{ form_label(form.mode, "Comment voulez-vous gérer les réservations") }}
+
+                    {# Affichage des erreurs pour ce champ précis. #}
+                    {{ form_errors(form.mode) }}
+
+                    {# Génération de l'input. #}
+                    {{ form_widget(form.mode) }}
+                </div>
+            </div>
+
+            {# Génération des champs pas encore écrits.
+            Dans cet exemple, ce serait « date », « auteur » et « publication »,
+            mais aussi le champ CSRF (géré automatiquement par Symfony !)
+            et tous les champs cachés (type « hidden »). #}
+            {{ form_rest(form) }}
+
+            {#<input type="submit" class="submit btn-danger" value="SUIVANT">#}
+            <a href="">Suivant</a>
+
+
+        </form>
+    </div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+
+{% endblock %}

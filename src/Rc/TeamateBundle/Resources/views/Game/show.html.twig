@@ -1,0 +1,331 @@
+{# src/Rc/TeamateBundle/Resources/views/Game/new.html.twig #}
+
+{% extends "RcTeamateBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Feuille de match{% endblock %}
+
+{% block body %}
+
+    <div class="wrap">
+
+    <div class="banner title">
+        <h1>Feuille de match</h1>
+    </div>
+
+    <div class="banner score clearfix">
+        <div class="left"><img src="{{ asset('bundles/rcteamate/images/feuilledematch/logoTeam1.png') }}" alt="logo team 1"></div>
+        <div class="right"><img src="{{ asset('bundles/rcteamate/images/feuilledematch/logoTeam2.png') }}" alt="logo team 2"></div>
+        SCORE<br>0 - 0
+    </div>
+
+    <div class="outlines row">
+        <div class="col-md-4">
+            <img src="{{ asset('bundles/rcteamate/images/feuilledematch/marker.png') }}" alt="marker"> Fives Aubervillers
+        </div>
+        <div class="col-md-4">
+            <img src="{{ asset('bundles/rcteamate/images/feuilledematch/calendar.png') }}" alt="calendar"> Mardi 22 Octobre 2014
+        </div>
+        <div class="col-md-4">
+            <img src="{{ asset('bundles/rcteamate/images/feuilledematch/clock.png') }}" alt="clock"> 22h - 23h
+        </div>
+    </div>
+
+    <div class="parameters row">
+        <div class="col-md-4 details">
+            <img src="{{ asset('bundles/rcteamate/images/feuilledematch/list.png') }}" alt="list">
+            <h3>Détails du match</h3><br>
+            <b>Terrain:</b> intérieur<br>
+            <b>Format:</b> 5 vs 5<br>
+            <b>Niveau:</b> Confirmé seulement<br>
+            <b>Mode:</b> Sur confirmation<br>
+            <b>Inscriptions et désistement:</b><br>
+            <span class="red">avant le lundi 21 octobre 20h</span>
+        </div>
+        <div class="col-md-4 invite">
+            <img src="{{ asset('bundles/rcteamate/images/feuilledematch/players.png') }}" alt="players">
+            <h3>Invite des joueurs</h3><br>
+            <span class="btn mail bg-red white" style="margin-left: 10px; width: 40px;">@</span><button class="btn mail bg-red">Par mail</button><br>
+            <img class="social" src="{{ asset('bundles/rcteamate/images/facebook.png') }}"><button class="btn facebook bg-blue">Partager</button><br>
+            <img class="social" src="{{ asset('bundles/rcteamate/images/twitter.png') }}"><button class="btn twitter bg-cyan">Twitter</button><br>
+            <br>
+            Lien de la feuille de match:
+            <div class="link">{{ app.request.uri }}</div>
+        </div>
+        <div class="col-md-4 reserve">
+            <img src="{{ asset('bundles/rcteamate/images/feuilledematch/stats.png') }}">
+            <h3>Réserve tes places</h3><br>
+            <span class="place">7</span> places libres <span class="place">7€</span> par joueur
+            je réserve <input type="number" id="nbPLaces"> places
+            <input type="submit" value="Réserver">
+        </div>
+    </div>
+
+    <div class="teams">
+        <table>
+            <tr>
+                <td><h4>Equipe 1</h4></td>
+                <td><h4>Equipe 2</h4></td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="" alt="photo de Yaroslav" class="right">
+                    <h5>Yaroslav Loshki</h5>
+                    <div class="orange">Organisateur</div>
+                    Attitude
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-yellow.png') }}" alt="yellow star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-yellow.png') }}" alt="yellow star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-yellow.png') }}" alt="yellow star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow.png') }}" alt="star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow.png') }}" alt="star"><br>
+                    Niveau
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-blue.png') }}" alt="blue star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-blue.png') }}" alt="blue star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-blue.png') }}" alt="blue star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow.png') }}" alt="star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow.png') }}" alt="star"><br>
+                    12 avis
+                </td>
+                <td>
+                    <img src="" alt="photo de Michael" class="left">
+                    <h5>Michael Zenaty</h5>
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-yellow.png') }}" alt="yellow star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-yellow.png') }}" alt="yellow star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-yellow.png') }}" alt="yellow star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow.png') }}" alt="star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow.png') }}" alt="star">
+                    Attitude<br>
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-blue.png') }}" alt="blue star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-blue.png') }}" alt="blue star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-blue.png') }}" alt="blue star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow.png') }}" alt="star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow.png') }}" alt="star">
+                    Niveau<br>
+                    12 avis
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="" alt="photo de Wells" class="right">
+                    <h5>Wells Riley</h5>
+                    Attitude
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-yellow.png') }}" alt="yellow star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-yellow.png') }}" alt="yellow star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-yellow.png') }}" alt="yellow star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow.png') }}" alt="star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow.png') }}" alt="star"><br>
+                    Niveau
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-blue.png') }}" alt="blue star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-blue.png') }}" alt="blue star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-blue.png') }}" alt="blue star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow.png') }}" alt="star">
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow.png') }}" alt="star"><br>
+                    12 avis
+                </td>
+                <td>
+                    <img src="{{ asset('bundles/rcteamate/images/feuilledematch/addPlayer.png') }}" alt="player">
+                    <h6>Place Libre</h6>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="text col-md-8">
+                        <h6>Place Libre</h6>
+                        <span class="red">Invité seulement</span>
+                    </div>
+                    <div class="picture col-md-4">
+                        <img src="{{ asset('bundles/rcteamate/images/feuilledematch/addPlayer.png') }}" alt="player">
+                    </div>
+                </td>
+                <td>
+                    <div class="picture col-md-4">
+                        <img src="{{ asset('bundles/rcteamate/images/feuilledematch/addPlayer.png') }}" alt="player">
+                    </div>
+                    <div class="text col-md-8">
+                        <h6>Place Libre</h6>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="text col-md-8">
+                        <h6>Place Libre</h6>
+                        <span class="red">Invité seulement</span>
+                    </div>
+                    <div class="picture col-md-4">
+                        <img src="{{ asset('bundles/rcteamate/images/feuilledematch/addPlayer.png') }}" alt="player">
+                    </div>
+                </td>
+                <td>
+                    <div class="picture col-md-4">
+                        <img src="{{ asset('bundles/rcteamate/images/feuilledematch/addPlayer.png') }}" alt="player">
+                    </div>
+                    <div class="text col-md-8">
+                        <h6>Place Libre</h6>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="text col-md-8">
+                        <h6>Place Libre</h6>
+                    </div>
+                    <div class="picture col-md-4">
+                        <img src="{{ asset('bundles/rcteamate/images/feuilledematch/addPlayer.png') }}" alt="player">
+                    </div>
+                </td>
+                <td>
+                    <div class="picture col-md-4">
+                        <img src="{{ asset('bundles/rcteamate/images/feuilledematch/addPlayer.png') }}" alt="player">
+                    </div>
+                    <div class="text col-md-8">
+                        <h6>Place Libre</h6>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="invited-players">
+        <div class="title">
+            <img src="{{ asset('bundles/rcteamate/images/feuilledematch/addPlayers.png') }}" alt="Invites">
+            25 Invités
+        </div>
+        <div class="invited-player">
+            <img src="" alt="Matt Picture">
+            <h5>Matt Vickers</h5>
+            <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-yellow.png') }}" alt="yellow star">
+            <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-yellow.png') }}" alt="yellow star">
+            <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-yellow.png') }}" alt="yellow star">
+            <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow.png') }}" alt="star">
+            <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow.png') }}" alt="star">
+            Attitude<br>
+            <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-blue.png') }}" alt="blue star">
+            <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-blue.png') }}" alt="blue star">
+            <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow-blue.png') }}" alt="blue star">
+            <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow.png') }}" alt="star">
+            <img src="{{ asset('bundles/rcteamate/images/feuilledematch/star-glow.png') }}" alt="star">
+            Niveau<br>
+            12 avis
+        </div>
+        <div class="invited-player">
+            <img src="{{ asset('bundles/rcteamate/images/feuilledematch/player.png') }}" alt="player">
+            <h5>Robin Lespes</h5>
+        </div>
+        <div class="invited-player">
+            <img src="{{ asset('bundles/rcteamate/images/feuilledematch/player.png') }}" alt="player">
+            <h5>Guillaume Abi</h5>
+        </div>
+    </div>
+
+    <div class="comments">
+        <div class="comment">
+
+        </div>
+    </div>
+
+    </div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Game</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ entity.date|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Starts_at</th>
+                <td>{{ entity.startsat }}</td>
+            </tr>
+            <tr>
+                <th>Ends_at</th>
+                <td>{{ entity.endsat }}</td>
+            </tr>
+            <tr>
+                <th>Limitdate</th>
+                <td>{{ entity.limitDate|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Is_activated</th>
+                <td>{{ entity.isactivated }}</td>
+            </tr>
+            <tr>
+                <th>Created_at</th>
+                <td>{{ entity.createdat|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Updated_at</th>
+                <td>{{ entity.updatedat|date('Y-m-d H:i:s') }}</td>
+            </tr>
+            <tr>
+                <th>Format</th>
+                <td>{{ entity.format }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ entity.price }}</td>
+            </tr>
+            <tr>
+                <th>Reservationmode</th>
+                <td>{{ entity.reservationMode }}</td>
+            </tr>
+            <tr>
+                <th>Pitchtype</th>
+                <td>{{ entity.pitchType }}</td>
+            </tr>
+            <tr>
+                <th>Level</th>
+                <td>{{ entity.level }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('game') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('game_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
+#}

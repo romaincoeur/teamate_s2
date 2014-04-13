@@ -1,0 +1,46 @@
+
+<div class="button-group">
+    <a href="{{ path('rc_teamate_homepage') }}"><div>Accueil</div></a>
+    <a href="#register" role="button" class="" data-toggle="modal"><div>Inscription</div></a>
+    <a href="#connexion" role="button" class="" data-toggle="modal"><div>Connexion</div></a>
+</div>
+
+
+
+
+<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            {{ render(controller("RcTeamateBundle:Default:Register")) }}
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="connexion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">Connexion</h3>
+            </div>
+            <div class="modal-body">
+                <form action="{{ path('login_check') }}" method="post">
+                    <input type="text" id="username" name="_username" placeholder="Username"/>
+
+                    <input type="password" id="password" name="_password" placeholder="Mot de passe"/>
+
+                    <input type="checkbox" id="remember_me"> Garder ma session active<br>
+
+                    <button type="submit">Connexion</button>
+                    <a href="" id="mdp_oublie">mot de passe oublié ?</a>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" data-dismiss="modal" aria-hidden="true">Fermer</button>
+                <button class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

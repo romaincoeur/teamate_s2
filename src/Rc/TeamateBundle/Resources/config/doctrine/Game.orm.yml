@@ -1,0 +1,59 @@
+# src/Rc/TeamateBundle/Resources/config/doctrine/Game.orm.yml
+Rc\TeamateBundle\Entity\Game:
+  type: entity
+  repositoryClass: Rc\TeamateBundle\Repository\GameRepository
+  table: game
+  id:
+    id:
+      type: integer
+      generator: { strategy: AUTO }
+  fields:
+    date:
+      type: date
+      nullable: true
+    starts_at:
+      type: time
+      nullable: true
+    ends_at:
+      type: time
+      nullable: true
+    limitDate:
+      type: date
+      nullable: true
+    is_activated:
+      type: boolean
+      nullable: true
+    created_at:
+      type: datetime
+    updated_at:
+      type: datetime
+      nullable: true
+    format:
+      type: string
+      length: 255
+      nullable: true
+    price:
+      type: integer
+      nullable: true
+    reservationMode:
+      type: string
+      length: 255
+      nullable: true
+    pitchType:
+      type: string
+      length: 255
+      nullable: true
+    level:
+      type: string
+      length: 255
+      nullable: true
+  manyToOne:
+    terrain:
+      targetEntity: Terrain
+      inversedBy: gales
+      joinColumn:
+        name: terrain_id
+        referencedColumnName: id
+  lifecycleCallbacks:
+    prePersist: [ setCreatedAtValue ]
+    preUpdate: [ setUpdatedAtValue ]

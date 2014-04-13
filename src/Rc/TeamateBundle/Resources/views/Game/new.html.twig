@@ -1,0 +1,178 @@
+{# src/Rc/TeamateBundle/Resources/views/Game/new.html.twig #}
+
+{% extends "RcTeamateBundle::layout.html.twig" %}
+
+{% block title %}{{ parent() }} - Créer mon match{% endblock %}
+
+{% block body %}
+
+
+    <div class="breadcrumb">
+        <div class="center-block" style="width: 700px;">
+            <div class="row">
+                <p>1.je crée mon match</p>
+                <p>2.je parametre</p>
+                <p>3.j'invite des joueurs</p>
+            </div>
+            <img class="center-block" src="{{ asset('bundles/rcteamate/images/breadcrumb.png') }}" alt="breadcrumb">
+        </div>
+    </div>
+
+    <div class="wrap">
+        <form action="{{ path('game_new') }}" method="post">
+            <div class="row maptool">
+                <div class="col-md-4" style="padding: 45px;">
+                    <select style="width: 150px;">
+                        <option data-content="<span style='color: #dddddd;'>Ville</span>">Ville</option>
+                        <option>Paris</option>
+                        <option>Lyon</option>
+                        <option>Marseille</option>
+                    </select>
+                    <select disabled style="width: 150px;">
+                        <option>Terrain</option>
+                    </select>
+                </div>
+                <div class="col-md-8">
+                    <div class="col-md-6 coords">
+                        <img class="right" src="{{ asset('bundles/rcteamate/images/marker_white.png') }}" alt="marker">
+                        <p>
+                        <span>
+                            Coordonées pour effectuer la réservation<br>
+                            URBAN PUTEAUX<br>
+                            01 48 74 20 52
+                        </span>
+                        </p>
+                    </div>
+                    <div id="map" style="height: 200px;">
+                        Veuillez patienter pendant le chargement de la carte...
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <p>La date </p>
+                    <input type="date" id="date">
+                </div>
+                <div class="col-md-4">
+                    <p>Commence à </p>
+                    <input type="time" id="start">
+                </div>
+                <div class="col-md-4">
+                    <p>Se termine à </p>
+                    <input type="time" id="end">
+                </div>
+            </div>
+            <div class="tight-wrap">
+                <div class="row form-group">
+                    <div class="col-md-6">
+                        Le format
+                    </div>
+                    <div class="col-md-6">
+                        <select>
+                            <option>5 vs 5</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-6">
+                        Le type de terrain
+                    </div>
+                    <div class="col-md-6">
+                        <select>
+                            <option>Intérieur</option>
+                            <option>Extérieur</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-6">
+                        Le niveau
+                    </div>
+                    <div class="col-md-6">
+                        <select>
+                            <option>Tous niveaux</option>
+                            <option>Débutant</option>
+                            <option>Confirmé</option>
+                            <option>Expert</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-6">
+                        Votre match est
+                    </div>
+                    <div class="col-md-6">
+                        <select>
+                            <option>Régulier</option>
+                            <option>Unique</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="radio" name="regularity" value="automatic">
+                    Chaque semaine, une invitation est envoyée automatiquement aux même joueurs 5 jours
+                    avant le match.<br>
+                    <input type="radio" name="regularity" value="manual">
+                    Je réinvite les joueurs manuellement à chaque fois.<br>
+                </div>
+                <div class="row">
+                    Fermeture des inscriptions
+                    <input type="number" name="subscribtions_end" style="width: 60px;">
+                    jours avant le match*.<br>
+                    <small>*Doit correspondre à la date limite d'annulation sans frais de votre réservation.</small>
+                </div>
+            </div>
+
+            {#<input type="submit" class="submit btn-danger" value="SUIVANT">#}
+            <a href="{{ path('game_parametre', { 'id':1 }) }}">Suivant</a>
+        </form>
+    </div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+    <script type="text/javascript" src="{{ asset('bundles/rcteamate/js/bootstrap-select.js') }}"></script>
+    <script>
+        $('.selectpicker').selectpicker();
+    </script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript">
+
+        var latlng = new google.maps.LatLng(48.8575162, 2.3426246);
+        // paris : 48.8575162	2.3426246
+        //objet contenant des propriétés avec des identificateurs prédéfinis dans Google Maps permettant
+        //de définir des options d'affichage de notre carte
+        var options = {
+            center: latlng,
+            zoom: 13,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        //constructeur de la carte qui prend en paramêtre le conteneur HTML
+        //dans lequel la carte doit s'afficher et les options
+        var map = new google.maps.Map(document.getElementById("map"), options);
+
+    </script>
+{% endblock %}
+
+
+
+
+{#
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Game creation</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('game') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}
+#}

@@ -1,0 +1,26 @@
+rc_teamate_homepage:
+    pattern:  /
+    defaults: { _controller: RcTeamateBundle:Default:index }
+
+RcTeamateBundle_terrain:
+        resource: "@RcTeamateBundle/Resources/config/routing/terrain.yml"
+        prefix:   /terrain
+
+RcTeamateBundle_game:
+        resource: "@RcTeamateBundle/Resources/config/routing/game.yml"
+        prefix:   /game
+
+login:
+    pattern:   /login
+    defaults:  { _controller: RcTeamateBundle:Default:login }
+login_check:
+    pattern:   /login_check
+logout:
+    pattern:   /logout
+register:
+    pattern:   /register
+    defaults:  { _controller: RcTeamateBundle:Default:register }
+
+RcTeamateBundle_user:
+        resource: "@RcTeamateBundle/Resources/config/routing/user.yml"
+        prefix:   /user

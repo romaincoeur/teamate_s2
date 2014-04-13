@@ -1,0 +1,30 @@
+terrain:
+    pattern:  /
+    defaults: { _controller: "RcTeamateBundle:Terrain:index" }
+
+terrain_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "RcTeamateBundle:Terrain:show" }
+
+terrain_new:
+    pattern:  /new
+    defaults: { _controller: "RcTeamateBundle:Terrain:new" }
+
+terrain_create:
+    pattern:  /create
+    defaults: { _controller: "RcTeamateBundle:Terrain:create" }
+    requirements: { _method: post }
+
+terrain_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "RcTeamateBundle:Terrain:edit" }
+
+terrain_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "RcTeamateBundle:Terrain:update" }
+    requirements: { _method: post|put }
+
+terrain_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "RcTeamateBundle:Terrain:delete" }
+    requirements: { _method: post|delete }

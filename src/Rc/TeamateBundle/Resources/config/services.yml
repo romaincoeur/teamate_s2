@@ -1,0 +1,18 @@
+#src/Rc/TeamateBundle/Resources/config/services.yml
+
+
+parameters:
+#    rc_teamate.example.class: Rc\TeamateBundle\Example
+
+services:
+  rc.teamate.admin.game:
+      class: Rc\TeamateBundle\Admin\GameAdmin
+      tags:
+          - { name: sonata.admin, manager_type: orm, group: teamate, label: Matches }
+      arguments: [null, Rc\TeamateBundle\Entity\Game, RcTeamateBundle:GameAdmin]
+
+  rc.teamate.admin.terrain:
+      class: Rc\TeamateBundle\Admin\TerrainAdmin
+      tags:
+          - { name: sonata.admin, manager_type: orm, group: teamate, label: Terrains }
+      arguments: [null, Rc\TeamateBundle\Entity\Terrain, RcTeamateBundle:TerrainAdmin]
